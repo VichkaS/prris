@@ -12,16 +12,14 @@ namespace task2
             while ( true )
             {
                 string[] command = Console.ReadLine().Split();
-                string action = command[ 0 ];
-                string contactName = command[ 1 ];
+                string action = command[ 0 ].ToLower();
+                string contactName = command[ 1 ].ToLower();
 
                 switch ( action )
                 {
-                    case "Add":
                     case "add":
                         AddContact( contactName );
                         break;
-                    case "Find":
                     case "find":
                         Console.WriteLine( $"Find {contactName} -> { Find( contactName) }" );
                         break;
