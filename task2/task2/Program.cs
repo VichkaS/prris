@@ -40,7 +40,25 @@ namespace task2
             var count = 0;
             foreach( var contact  in _contacts)
             {
-                if ( contact.IndexOf(contactName) > -1 )
+                var countMatches = 0;
+                for ( var i = 0; i < contactName.Length; i++ )
+                {
+                    if ( i < contact.Length )
+                    {
+                        if( contactName[i] == contact[i] )
+                        {
+                            countMatches++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    } else
+                    {
+                        break;
+                    }
+                }
+                if ( countMatches > 0 && countMatches == contactName.Length )
                 {
                     count++;
                 }
